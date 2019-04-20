@@ -1,13 +1,15 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import List from "./List";
 import Wizard from "../wiz";
 import Dashbaord from "./Dashboard/dashboard";
+import LogIn from "./Login";
+import signUp from "./signUp";
 
 export default (
   <Switch>
-    <Route component={Wizard} path="/new" />
-    <Route component={List} path="/PC" />
     <Route component={Dashbaord} exact path="/" />
+    <Route component={Wizard} path="/new" />
+    <Route component={signUp} exact path="/su" />
+    <Route component={LogIn} exact path="/li" />
   </Switch>
 );

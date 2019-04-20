@@ -31,21 +31,41 @@ class Dashbaord extends Component {
       });
     });
   }
+  handleClick() {
+    alert("Hello");
+  }
 
   render() {
     return (
-      <div>
+      <div className="hey">
         {this.state.homes.map((val, index) => {
           return (
-            <div>
+            <div className="cardz">
               <House
                 key={val.index}
                 name={val.name}
                 address={val.address}
                 city={val.city}
+                state={val.state}
                 zip={val.zip}
+                img={val.img}
+                phone={val.phone}
               />
               <button onClick={() => this.handleDelete(val.id)}>Delete</button>
+              <button
+                onClick={() => {
+                  alert("Phone # 435-633-3142");
+                }}
+              >
+                Contact
+              </button>
+              <button
+                onClick={() => {
+                  alert("Added to Favorites");
+                }}
+              >
+                Add to Favorites
+              </button>
             </div>
           );
         })}

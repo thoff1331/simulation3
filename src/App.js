@@ -12,14 +12,23 @@ class App extends Component {
     return (
       <HashRouter>
         <Header />
-        <div>
+        <div className="links">
           <Link to="/">
             <div>Home</div>
           </Link>
-          <Link to="/PC">Past Competencies</Link>
+          <br />
           <Link to="/new"> Add New Property</Link>
+          <br />
+          <Link to="/li"> Log In</Link>
+          <br />
+          <Link to="/su">Sign Up!</Link>
+
+          <br />
         </div>
         <div>{routes}</div>
+        <div className="footer">
+          <h1 />
+        </div>
       </HashRouter>
     );
   }

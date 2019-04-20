@@ -1,3 +1,60 @@
 body {
-  background-color: aquamarine;
+  background-color: rgb(49, 34, 5);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 17px double black;
+  background-color: rgb(54, 40, 21);
+  color: white;
+}
+
+.links {
+  border: 1px double black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  background-color: rgb(143, 90, 66);
+}
+.cards {
+  border: 10px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+  width: 20vw;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: inherit;
+  background: rgb(143, 90, 66);
+  color: white;
+}
+
+.title {
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: white;
+  font-size: 45px;
+}
+.cardz {
+  display: flex;
+  flex-direction: column;
+}
+.hey {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.footer {
+  width: 100vw;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  background: rgb(143, 90, 66);
+  height: 7vh;
+}
+
+.log {
+  background-color: aqua;
 }

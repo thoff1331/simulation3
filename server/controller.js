@@ -46,10 +46,10 @@ const getHomes = (req, res) => {
 };
 const addHomes = (req, res) => {
   const db = req.app.get("db");
-  const { name, address, city, state, zip } = req.body;
-  console.log(req.body.name);
+  const { name, address, city, state, zip, img, contact } = req.body;
+  console.log(req.body);
 
-  db.add_Homes([name, address, city, state, zip])
+  db.add_Homes([name, address, city, state, zip, img, contact])
     .then(() => res.sendStatus(200))
     .catch(err => console.log(err));
 };

@@ -12,6 +12,8 @@ class Wizard extends Component {
       city: "",
       state: "",
       zip: "",
+      img: "",
+      phone: "",
       homes: [],
       redirect: false,
       homes: store.getState().homes
@@ -22,6 +24,8 @@ class Wizard extends Component {
     this.handleStateChange = this.handleStateChange.bind(this);
     this.handleZipChange = this.handleZipChange.bind(this);
     this.handlePost = this.handlePost.bind(this);
+    this.handleImage = this.handleImage.bind(this);
+    this.handlePhone = this.handlePhone.bind(this);
   }
   handleNameChange(e) {
     this.setState({
@@ -54,7 +58,9 @@ class Wizard extends Component {
       address: this.state.address,
       city: this.state.city,
       state: this.state.state,
-      zip: this.state.zip
+      zip: this.state.zip,
+      img: this.state.img,
+      phone: this.state.phone
     }).then(response => {
       console.log("here");
       this.setState({
@@ -63,21 +69,26 @@ class Wizard extends Component {
       });
     });
   }
-  reduxButton = () => {
-    const action = {
-      type: ADD_HOME,
-      payload: this.state.homes
-    };
-    store.dispatch(action);
-  };
+
+  handleImage(e) {
+    this.setState({
+      img: e.target.value
+    });
+  }
+  handlePhone(e) {
+    this.setState({
+      phone: e.target.value
+    });
+  }
 
   render() {
+    console.log(this.state.img);
     if (this.state.redirect) {
       return <Redirect to="/" />;
     }
     return (
       <div>
-        <form>
+        <form className="form">
           <label> Name</label>
           <input onChange={this.handleNameChange} />
           <label>Address</label>
@@ -88,11 +99,14 @@ class Wizard extends Component {
           <input onChange={this.handleStateChange} />
           <label> Zip</label>
           <input onChange={this.handleZipChange} />
+          <label>Phone Number</label>
+          <input onChange={this.handlePhone} />
+          <label>Image URL</label>
+          <input onChange={this.handleImage} />
           <Link to="/">
             <button>Cancel</button>
           </Link>
           <button onClick={this.handlePost}>Add Property</button>
-          <button onClick={this.handlePost}>Add Via Redux</button>
         </form>
       </div>
     );

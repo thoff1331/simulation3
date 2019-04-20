@@ -6,7 +6,7 @@ class Header extends Component {
     this.state = {};
   }
   render() {
-    return <h1>Houser</h1>;
+    return <h1 className="title">REAL Estate REAL Fast</h1>;
   }
 }
 
